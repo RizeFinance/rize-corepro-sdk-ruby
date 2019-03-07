@@ -4,6 +4,10 @@ module CorePro
     class CustomerAnswer < JsonBase
       attr_accessor :questionType
       attr_accessor :questionAnswer
+
+      def from_json!(json, _)
+        @questionAnswer = json
+      end
     end
   end
 end
