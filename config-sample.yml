@@ -3,3 +3,5 @@ CoreProApiSecret: your-secret-here
 CoreProDomainName: sandbox-api.corepro.io
 CoreProProxyServerName: leave-empty-if-no-proxy
 CoreProProxyPort: leave-empty-if-no-proxy
+CoreProProxyUserName: leave-empty-if-no-proxy
+CoreProProxyPassword: leave-empty-if-no-proxy

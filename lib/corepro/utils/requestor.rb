@@ -34,7 +34,8 @@ module CorePro
         end
         uri = URI.parse("https://#{connection.domainName}#{relativeUrl}")
         if connection.proxyServerName != nil && connection.proxyPort != nil
-          proxy = Net::HTTP::Proxy(connection.proxyServerName, connection.proxyPort)
+          proxy = Net::HTTP::Proxy(connection.proxyServerName, connection.proxyPort,
+                                   connection.proxyUserName, connection.proxyPassword)
           http = proxy.new(uri.host, uri.port)
         else
           http = Net::HTTP.new(uri.host, uri.port)
@@ -63,7 +64,8 @@ module CorePro
 
         uri = URI.parse("https://#{connection.domainName}#{relativeUrl}")
         if connection.proxyServerName != nil && connection.proxyPort != nil
-          proxy = Net::HTTP::Proxy(connection.proxyServerName, connection.proxyPort)
+          proxy = Net::HTTP::Proxy(connection.proxyServerName, connection.proxyPort,
+                                   connection.proxyUserName, connection.proxyPassword)
           http = proxy.new(uri.host, uri.port)
         else
           http = Net::HTTP.new(uri.host, uri.port)

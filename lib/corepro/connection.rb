@@ -6,6 +6,8 @@ module CorePro
 
     attr_accessor :proxyServerName
     attr_accessor :proxyPort
+    attr_accessor :proxyUserName
+    attr_accessor :proxyPassword
 
     @@config = begin
       if File.exists?('config.yml')
@@ -20,22 +22,30 @@ module CorePro
     end
 
 
-    def self.createFromConfig(apiKey = nil, apiSecret = nil, domainName = nil, proxyServerName = nil, proxyPort = nil)
+    def self.createFromConfig(apiKey = nil, apiSecret = nil, domainName = nil, proxyServerName = nil, proxyPort = nil,
+                              proxyUserName = nil, proxyPassword = nil)
+
       c = Connection.new
       c.apiKey = apiKey || @@config['CoreProApiKey']
       c.apiSecret = apiSecret || @@config['CoreProApiSecret']
       c.domainName = domainName || @@config['CoreProDomainName']
       c.proxyServerName = proxyServerName || @@config['CoreProProxyServerName']
       c.proxyPort = proxyPort || @@config['CoreProProxyPort']
+      c.proxyUserName = proxyUserName || @@config['CoreProProxyUserName']
+      c.proxyPassword = proxyPassword || @@config['CoreProProxyPassword']
       c
     end
 
-    def initialize(apiKey = nil, apiSecret = nil, domainName = nil, proxyServerName = nil, proxyPort = nil)
+    def initialize(apiKey = nil, apiSecret = nil, domainName = nil, proxyServerName = nil, proxyPort = nil,
+                   proxyUserName = nil, proxyPassword = nil)
+
       @apiKey = apiKey || @@config['CoreProApiKey']
       @apiSecret = apiSecret || @@config['CoreProApiSecret']
       @domainName = domainName || @@config['CoreProDomainName']
       @proxyServerName = proxyServerName || @@config['CoreProProxyServerName']
       @proxyPort = proxyPort || @@config['CoreProProxyPort']
+      @proxyUserName = proxyUserName || @@config['CoreProProxyUserName']
+      @proxyPassword = proxyPassword || @@config['CoreProProxyPassword']
       @headerValue = ''
     end
 

@@ -6,11 +6,11 @@ require 'corepro/version'
 Gem::Specification.new do |spec|
   spec.name          = 'corepro'
   spec.version       = CorePro::VERSION
-  spec.authors       = ['devsupport']
-  spec.email         = ['devsupport@socialmoney.com']
-  spec.summary       = %q{A Ruby SDK for consuming the CorePro API.}
+  spec.authors       = ['hyperneon']
+  spec.email         = ['engineering@rizemoney.com']
+  spec.summary       = %q{A Rize maintained Ruby SDK for consuming the CorePro API. Forked from https://github.com/socialmoney/corepro-sdk-ruby}
   spec.description   = %q{See https://docs.corepro.io for more detail.}
-  spec.homepage      = 'https://github.com/socialmoney/corepro-sdk-ruby'
+  spec.homepage      = 'https://github.com/RizeFinance/rize-corepro-sdk-ruby'
   spec.license       = 'MIT'
 
   spec.files         = `git ls-files -z`.split("\x0")
