@@ -55,6 +55,10 @@ module CorePro
       CorePro::Utils::Requestor.post('/card/reissue', Card, self, connection, loggingObject)
     end
 
+    def resetPin(connection = nil, loggingObject = nil)
+      CorePro::Utils::Requestor.post('/card/resetPin', Card, self, connection, loggingObject)
+    end
+
     def archive(connection = nil, loggingObject = nil)
       CorePro::Utils::Requestor.post('/card/archive', nil, self, connection, loggingObject)
     end
